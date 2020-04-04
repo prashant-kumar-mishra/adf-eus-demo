@@ -1,0 +1,12 @@
+{
+	"name": "LS_Dest_Synapse_demo",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDW",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=test-synapse-adp.database.windows.net;initial catalog=testsqlpool;user id=pkmishra",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkFERi1FVVMtREVNT19lNWE4MzE5Ny05N2I3LTQyNTItYjhhMi1hY2YxNDZjNjg0ODIiDQp9"
+		}
+	}
+}
