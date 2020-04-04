@@ -361,6 +361,7 @@
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
+					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
 				"schema": []
@@ -437,7 +438,62 @@
 							"sink": {
 								"type": "AzureSqlSink"
 							},
-							"enableStaging": false
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "Year",
+											"type": "Int64"
+										},
+										"sink": {
+											"name": "Year",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Passenger Fatalities",
+											"type": "Int64"
+										},
+										"sink": {
+											"name": "PassengerFatalities",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Passenger Serious Injuries",
+											"type": "Int64"
+										},
+										"sink": {
+											"name": "PassengerSeriousInjuries",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Total Passenger Enplanements (millions)",
+											"type": "Int64"
+										},
+										"sink": {
+											"name": "TotalPassengerEnplanements(millions)",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "Million Passenger Enplanements per Passenger Fatality",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "MillionPassengerEnplanementsPerPassengerFatality",
+											"type": "Decimal"
+										}
+									}
+								]
+							}
 						},
 						"inputs": [
 							{
