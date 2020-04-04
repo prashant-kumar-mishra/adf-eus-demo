@@ -10,10 +10,6 @@
 		"LS_Src_Blob_eus_demo_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_Src_Blob_eus_demo'"
-		},
-		"LS_Dest_Synapse_demo_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'LS_Dest_Synapse_demo'"
 		}
 	},
 	"variables": {
@@ -29,19 +25,6 @@
 				"type": "AzureBlobStorage",
 				"typeProperties": {
 					"connectionString": "[parameters('LS_Src_Blob_eus_demo_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_Dest_Synapse_demo')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureSqlDW",
-				"typeProperties": {
-					"connectionString": "[parameters('LS_Dest_Synapse_demo_connectionString')]"
 				}
 			},
 			"dependsOn": []
