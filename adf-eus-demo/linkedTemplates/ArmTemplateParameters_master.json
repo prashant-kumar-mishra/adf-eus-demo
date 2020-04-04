@@ -5,11 +5,20 @@
 		"factoryName": {
 			"value": "adf-eus-demo"
 		},
+		"Dest_SQL_adfdemo_connectionString": {
+			"value": ""
+		},
 		"LS_Src_Blob_eus_demo_connectionString": {
 			"value": ""
 		},
-		"Dest_SQL_adfdemo_connectionString": {
+		"Src_VMFile_password": {
 			"value": ""
+		},
+		"Src_VMFile_properties_typeProperties_host": {
+			"value": "F:\\data\\DemoFile"
+		},
+		"Src_VMFile_properties_typeProperties_userId": {
+			"value": "pkmishra"
 		},
 		"containerUri": {
 			"value": ""

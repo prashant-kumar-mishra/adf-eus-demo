@@ -7,13 +7,25 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adf-eus-demo"
 		},
+		"Dest_SQL_adfdemo_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Dest_SQL_adfdemo'"
+		},
 		"LS_Src_Blob_eus_demo_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_Src_Blob_eus_demo'"
 		},
-		"Dest_SQL_adfdemo_connectionString": {
+		"Src_VMFile_password": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'Dest_SQL_adfdemo'"
+			"metadata": "Secure string for 'password' of 'Src_VMFile'"
+		},
+		"Src_VMFile_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "F:\\data\\DemoFile"
+		},
+		"Src_VMFile_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "pkmishra"
 		},
 		"containerUri": {
 			"type": "string",
@@ -42,11 +54,20 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"Dest_SQL_adfdemo_connectionString": {
+						"value": "[parameters('Dest_SQL_adfdemo_connectionString')]"
+					},
 					"LS_Src_Blob_eus_demo_connectionString": {
 						"value": "[parameters('LS_Src_Blob_eus_demo_connectionString')]"
 					},
-					"Dest_SQL_adfdemo_connectionString": {
-						"value": "[parameters('Dest_SQL_adfdemo_connectionString')]"
+					"Src_VMFile_password": {
+						"value": "[parameters('Src_VMFile_password')]"
+					},
+					"Src_VMFile_properties_typeProperties_host": {
+						"value": "[parameters('Src_VMFile_properties_typeProperties_host')]"
+					},
+					"Src_VMFile_properties_typeProperties_userId": {
+						"value": "[parameters('Src_VMFile_properties_typeProperties_userId')]"
 					}
 				}
 			},
