@@ -1,0 +1,6 @@
+{
+	"name": "vmIntegrationRuntime",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
