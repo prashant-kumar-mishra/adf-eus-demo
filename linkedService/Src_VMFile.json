@@ -1,0 +1,17 @@
+{
+	"name": "Src_VMFile",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "FileServer",
+		"typeProperties": {
+			"host": "F:\\data\\DemoFile",
+			"userId": "pkmishra",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIzMTM1MmM1OC0xZTBjLTQzZDYtYWZmMy0xMGE2MTk3ZDg1YzkiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "vmIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
