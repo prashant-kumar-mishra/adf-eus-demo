@@ -1,0 +1,104 @@
+{
+	"name": "CopyBlobToSQL",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Year",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "Year",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Passenger Fatalities",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "PassengerFatalities",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Passenger Serious Injuries",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "PassengerSeriousInjuries",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Total Passenger Enplanements (millions)",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "TotalPassengerEnplanements(millions)",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Million Passenger Enplanements per Passenger Fatality",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "MillionPassengerEnplanementsPerPassengerFatality",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_Src_blob_adfdemoblob",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_Dest_SQL_adfdemo",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
