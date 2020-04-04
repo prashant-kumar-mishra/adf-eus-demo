@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-eus-demo"
+		},
+		"LS_Src_Blob_eus_demo_connectionString": {
+			"value": ""
+		},
+		"LS_Dest_Synapse_demo_connectionString": {
+			"value": ""
+		}
+	}
+}
