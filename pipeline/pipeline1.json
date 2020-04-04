@@ -36,6 +36,13 @@
 						}
 					},
 					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "LS_Src_Blob_eus_demo",
+							"type": "LinkedServiceReference"
+						},
+						"path": "adfdemoblob"
+					},
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
