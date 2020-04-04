@@ -1,0 +1,20 @@
+{
+	"name": "DS_VMFile",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Src_VMFile",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
