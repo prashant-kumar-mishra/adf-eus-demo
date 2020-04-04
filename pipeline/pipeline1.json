@@ -35,7 +35,7 @@
 							"useTypeDefault": true
 						}
 					},
-					"enableStaging": false,
+					"enableStaging": true,
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
