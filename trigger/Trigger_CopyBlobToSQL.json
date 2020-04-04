@@ -1,0 +1,29 @@
+{
+	"name": "Trigger_CopyBlobToSQL",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "CopyBlobToSQL",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Week",
+				"interval": 1,
+				"startTime": "2020-04-04T17:14:00.000Z",
+				"timeZone": "UTC",
+				"schedule": {
+					"weekDays": [
+						"Sunday"
+					]
+				}
+			}
+		}
+	}
+}
