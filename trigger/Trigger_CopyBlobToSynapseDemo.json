@@ -1,0 +1,24 @@
+{
+	"name": "Trigger_CopyBlobToSynapseDemo",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pipeline1",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2020-04-04T16:47:00.000Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
