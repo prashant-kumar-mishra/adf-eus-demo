@@ -41,8 +41,8 @@
 						"mappings": [
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 1
+									"name": "Year",
+									"type": "Int64"
 								},
 								"sink": {
 									"name": "Year",
@@ -51,8 +51,8 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 2
+									"name": "Passenger Fatalities",
+									"type": "Int64"
 								},
 								"sink": {
 									"name": "PassengerFatalities",
@@ -61,8 +61,8 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 3
+									"name": "Passenger Serious Injuries",
+									"type": "Int64"
 								},
 								"sink": {
 									"name": "PassengerSeriousInjuries",
@@ -71,8 +71,8 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 4
+									"name": "Total Passenger Enplanements (millions)",
+									"type": "Int64"
 								},
 								"sink": {
 									"name": "TotalPassengerEnplanements(millions)",
@@ -81,8 +81,8 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 5
+									"name": "Million Passenger Enplanements per Passenger Fatality",
+									"type": "Decimal"
 								},
 								"sink": {
 									"name": "MillionPassengerEnplanementsPerPassengerFatality",
