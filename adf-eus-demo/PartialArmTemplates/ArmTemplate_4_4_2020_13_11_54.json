@@ -1,0 +1,62 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-eus-demo"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_Dest_SQL_adfdemo')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Dest_SQL_adfdemo",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "Year",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "PassengerFatalities",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "PassengerSeriousInjuries",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "TotalPassengerEnplanements(millions)",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "MillionPassengerEnplanementsPerPassengerFatality",
+						"type": "decimal",
+						"precision": 10,
+						"scale": 2
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "PassengersInjuryRates"
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

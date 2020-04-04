@@ -7,6 +7,9 @@
 		},
 		"LS_Src_Blob_eus_demo_connectionString": {
 			"value": ""
+		},
+		"Dest_SQL_adfdemo_connectionString": {
+			"value": ""
 		}
 	}
 }

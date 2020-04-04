@@ -10,6 +10,10 @@
 		"LS_Src_Blob_eus_demo_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_Src_Blob_eus_demo'"
+		},
+		"Dest_SQL_adfdemo_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Dest_SQL_adfdemo'"
 		}
 	},
 	"variables": {
@@ -25,6 +29,19 @@
 				"type": "AzureBlobStorage",
 				"typeProperties": {
 					"connectionString": "[parameters('LS_Src_Blob_eus_demo_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Dest_SQL_adfdemo')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('Dest_SQL_adfdemo_connectionString')]"
 				}
 			},
 			"dependsOn": []
@@ -71,6 +88,54 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/LS_Src_Blob_eus_demo')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_Dest_SQL_adfdemo')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Dest_SQL_adfdemo",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "Year",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "PassengerFatalities",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "PassengerSeriousInjuries",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "TotalPassengerEnplanements(millions)",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "MillionPassengerEnplanementsPerPassengerFatality",
+						"type": "decimal",
+						"precision": 10,
+						"scale": 2
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "PassengersInjuryRates"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Dest_SQL_adfdemo')]"
 			]
 		}
 	]
